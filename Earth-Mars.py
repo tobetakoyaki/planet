@@ -14,7 +14,7 @@ Distance_Mars = 2.2794 # 億km
 
 # Angle
 def angle_translator(theta):
-    return 2 * np.pi * (theta - np.floor(theta))
+    return theta - 2 * np.pi * np.floor(theta/(2 * np.pi))
 
 def polar(r, theta):
     return np.array([r * np.cos(theta), r * np.sin(theta)])
@@ -30,7 +30,7 @@ def angle_on_earth(t):
     # Angle
     return np.arctan2(Location_diff[1],Location_diff[0])
 
-time = [t/1000 for t in range(0,501)]
+time = [t/200 for t in range(0,601)]
 Xdat = []
 Ydat = []
 fig = plt.figure()
