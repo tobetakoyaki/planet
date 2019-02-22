@@ -30,7 +30,7 @@ def angle_on_earth(t):
     # Angle
     return np.arctan2(Location_diff[1],Location_diff[0])
 
-time = [t/100 for t in range(0,1001)]
+time = [t/1000 for t in range(0,501)]
 Xdat = []
 Ydat = []
 fig = plt.figure()
@@ -45,7 +45,7 @@ for t in time:
   Ydat.append(np.sin(angle))
   Xdat = Xdat[-10:]
   Ydat = Ydat[-10:]
-  im = ax.plot(Xdat,Ydat)
+  im = ax.plot(Xdat,Ydat,"b")
   ims.append(im)
 
 ani = animation.ArtistAnimation(fig, ims, interval=100)
